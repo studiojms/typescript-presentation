@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Typescript" />
+    <meta name="author" content="Jefferson Mariano de Souza" />
+
+    <title>Typescript</title>
+
+    <link rel="stylesheet" href="assets/reset.css" />
+    <link rel="stylesheet" href="assets/reveal.css" />
+    <link rel="stylesheet" href="assets/theme/league.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="img/typescript-background.jpeg" data-background-transition="zoom">
+          <br />
+          <br />
+          <br />
+          <br />
+          <p>Jefferson Mariano de Souza</p>
+        </section>
+        <section data-background="img/programming.jpeg" data-background-opacity="0.1">
+          <h2>O que é?</h2>
+          <section>
+            <img src="img/TSvsJS.png" />
+            <aside class="notes">
+              <ul>
+                <li>Superset/superconjunto de Javascript</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <ul>
+              <li>Criado em 2012 pela Microsoft</li>
+              <li class="fragment">Influências: Java, Javascript, C#</li>
+            </ul>
+          </section>
+        </section>
+        <section data-background="img/js-ts-background.jpg" data-background-opacity="0.1">
+          <h2>Vantagens</h2>
+          <ul>
+            <li class="fragment">autocomplete (IDEs integram bem)</li>
+            <li class="fragment">compilada: feedback de erros de forma rápida</li>
+            <li class="fragment">possibilidade de integrar com javascript de forma simples e fácil</li>
+            <li class="fragment">todo código javascript é um código typescript válido</li>
+          </ul>
+        </section>
+        <section data-background="img/js-ts-background.jpg" data-background-opacity="0.1">
+          <h2>Desvantagens</h2>
+          <ul>
+            <li class="fragment">código mais verboso</li>
+            <li class="fragment">curva de aprendizado maior (comparando com javascript)</li>
+          </ul>
+        </section>
+        <section data-background="img/malabaris.jpg" data-background-opacity="0.2">
+          <h2>Como funciona?</h2>
+          <ul>
+            <li class="fragment">adiciona uma camada de verificação a mais no código</li>
+            <li class="fragment">antecipa problemas que ocorreriam em runtime para tempo de compilação</li>
+          </ul>
+        </section>
+        <section data-background="img/coding.jpg" data-background-opacity="0.1">
+          <h2>Exemplo de código</h2>
+          <section>
+            <h4>Javascript</h4>
+            <pre>
+			  <code data-line-numbers="2|6,7|9">
+				function my_sum(a, b) {
+				  return a + b;
+				}				
+				
+				let a = 4; 
+				let b = "5";
+								
+				my_sum(a, b); //result: 45
+			  </code>
+			</pre>
+          </section>
+
+          <section>
+            <h4>Typescript</h4>
+            <pre>
+			  <code data-line-numbers="2">
+				function my_sum(a: number, b: number) {
+				  return a + b;
+				}				
+				
+				let a = 4; 
+				let b = "5";
+								
+				my_sum(a, b);
+			  </code>
+			  <span style="color: #fb4a4a">9: Argument of type 'string' is not assignable to parameter of type 'number'.</span>
+			</pre>
+          </section>
+        </section>
+        <section data-background="img/js-ts-background.jpg" data-background-opacity="0.1">
+          <h2>Quando usar Typescript?</h2>
+          <ul>
+            <li class="fragment">projetos grandes e complexos</li>
+            <li class="fragment">grande quantidade de arquivos</li>
+            <li class="fragment">equipes com vários desenvolvedores</li>
+          </ul>
+        </section>
+        <section data-background="img/typescript-vs-flow.png" data-background-opacity="0.1">
+          <h2>Outras Alternativas</h2>
+          <ul>
+            <li class="fragment">PropTypes</li>
+            <li class="fragment">Flow</li>
+            <li class="fragment">JSDocs</li>
+          </ul>
+          <aside class="notes">
+            <ul>
+              <li>PropTypes se iniciou no projeto React, virou um pacote separado mais tarde</li>
+              <li>
+                Flow adiciona marcações (comentários) no código. Recentemente o Facebook publicou que a lib vai seguir
+                para atender apenas propósitos internos deles
+              </li>
+              <li>JSDocs - Similar a javadocs</li>
+            </ul>
+          </aside>
+        </section>
+        <section data-background="img/js-ts.jpg" data-background-opacity="0.2">
+          <h2>De onde vem os tipos?</h2>
+          <ul>
+            <li class="fragment">arquivos de definição (.d.ts)</li>
+            <li class="fragment">Ex: @types/react</li>
+            <li class="fragment"><a href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a></li>
+          </ul>
+        </section>
+        <section data-background="img/questions.jpg" data-background-opacity="0.1">
+          <h2>Dúvidas comuns</h2>
+          <ul>
+            <li class="fragment">Typescript vai substituir o javascript?</li>
+            <li class="fragment">Tenho que adicionar tipo em tudo?</li>
+          </ul>
+        </section>
+        <section data-background="img/babel.png" data-background-opacity="0.1">
+          <h2>E como integrar com um projeto existente em JS?</h2>
+          <ul>
+            <li class="fragment">
+              Atualmente diversas dependências de terceiros (<em>npm</em>) já são escritas em Typescript
+            </li>
+            <li class="fragment">Typescript deve ser transpilado juntamente com o código javascript</li>
+          </ul>
+        </section>
+        <section data-background="img/migration.png" data-background-opacity="0.1">
+          <h2>Estratégia de Migração</h2>
+          <section>
+            <h4>Migrar todo o código existente</h4>
+            <ul>
+              <li class="fragment highlight-red">Problema: Muito tempo gasto sem novas funcionalidades</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Migrar usando ferramentas (ex: airbnb/ts-migrate)</h4>
+            <ul>
+              <li class="fragment highlight-red">
+                Problema: A maior parte do código não é migrada corretamente, sendo necessário rever quase tudo
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>Migrar aos poucos</h4>
+            <ul>
+              <li class="fragment highlight-red">Problema: Conviver com base de código dividida (JS e TS)</li>
+              <li class="fragment highlight-green">Código novo passa a ser criado usando TS</li>
+              <li class="fragment highlight-green">
+                Código base (se algum) é migrado antes, pois será base para novos desenvolvimentos
+              </li>
+              <li class="fragment highlight-green">
+                Código antigo é migrado sob demanda, sempre que determinado arquivo precisar de alterações
+              </li>
+              <li class="fragment highlight-green">Toda a equipe vai aprendendo junto, aos poucos</li>
+            </ul>
+          </section>
+        </section>
+        <section data-background="img/TS-end.png" data-background-opacity="0.3">
+          <h1>THE END</h1>
+          <p>
+            Apresentação disponível em:
+            <a href="http://studiojms.github.io/typescript-presentation"
+              >http://studiojms.github.io/typescript-presentation</a
+            >
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="assets/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+      });
+    </script>
+  </body>
+</html>
